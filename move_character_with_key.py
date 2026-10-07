@@ -61,6 +61,11 @@ while running:
             action = 1
         else:
             action = 0
+    else:
+        if facing == 1:
+            action = 3
+        else:
+            action = 2
 
     frame = (frame + 1) % 8
     x += dir_x * 5
