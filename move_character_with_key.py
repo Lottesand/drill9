@@ -60,6 +60,12 @@ def update_character():
     x = clamp(50, x, TUK_WIDTH - 50)
     y = clamp(50, y, TUK_HEIGHT - 50)
 
+def render_world():
+    clear_canvas()
+    tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
+    character.clip_draw(frame * 100, 100 * action, 100, 100, x, y)
+    update_canvas()
+
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 frame = 0
@@ -69,11 +75,7 @@ facing = 1
 action = 3
 
 while running:
-    clear_canvas()
-    tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * action, 100, 100, x, y)
-    update_canvas()
-
+    render_world()
     handle_events()
     update_character()
     delay(0.05)
