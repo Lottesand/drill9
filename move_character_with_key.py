@@ -34,21 +34,8 @@ def handle_events():
             elif event.key == SDLK_DOWN:
                 dir_y += 1
 
-running = True
-x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
-frame = 0
-dir_x = 0
-dir_y = 0
-facing = 1
-action = 3
-
-while running:
-    clear_canvas()
-    tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * action, 100, 100, x, y)
-    update_canvas()
-
-    handle_events()
+def update_character():
+    global x, y, frame, action, facing
 
     if dir_x > 0:
         action = 1
@@ -72,6 +59,23 @@ while running:
     y += dir_y * 5
     x = clamp(50, x, TUK_WIDTH - 50)
     y = clamp(50, y, TUK_HEIGHT - 50)
+
+running = True
+x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
+frame = 0
+dir_x = 0
+dir_y = 0
+facing = 1
+action = 3
+
+while running:
+    clear_canvas()
+    tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
+    character.clip_draw(frame * 100, 100 * action, 100, 100, x, y)
+    update_canvas()
+
+    handle_events()
+    update_character()
     delay(0.05)
 
 close_canvas()
