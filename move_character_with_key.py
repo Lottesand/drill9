@@ -40,6 +40,7 @@ frame = 0
 dir_x = 0
 dir_y = 0
 facing = 1
+action = 3
 
 while running:
     clear_canvas()
