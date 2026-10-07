@@ -49,6 +49,7 @@ while running:
     handle_events()
     frame = (frame + 1) % 8
     x += dir * 5
+    y += dir_y * 5
     delay(0.05)
 
 close_canvas()
