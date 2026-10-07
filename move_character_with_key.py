@@ -49,6 +49,11 @@ while running:
     update_canvas()
 
     handle_events()
+
+    if dir_x > 0:
+        action = 1
+        facing = 1
+
     frame = (frame + 1) % 8
     x += dir_x * 5
     y += dir_y * 5
