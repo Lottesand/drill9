@@ -3,7 +3,7 @@ from pico2d import *
 TUK_WIDTH, TUK_HEIGHT = 1280, 1024
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
 
-grass = load_image('grass.png')
+tuk_ground = load_image('TUK_GROUND.png')
 character = load_image('animation_sheet.png')
 
 def handle_events():
@@ -33,6 +33,7 @@ dir = 0
 
 while running:
     clear_canvas()
+    grass = tuk_ground
     grass.draw(400, 30)
     character.clip_draw(frame * 100, 100, 100, 100, x, 90)
     update_canvas()
