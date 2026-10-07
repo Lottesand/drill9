@@ -70,6 +70,7 @@ while running:
     frame = (frame + 1) % 8
     x += dir_x * 5
     y += dir_y * 5
+    x = clamp(50, x, TUK_WIDTH - 50)
     delay(0.05)
 
 close_canvas()
