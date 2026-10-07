@@ -1,4 +1,7 @@
+import os
 from pico2d import *
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 TUK_WIDTH, TUK_HEIGHT = 1280, 1024
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
