@@ -56,6 +56,11 @@ while running:
     elif dir_x < 0:
         action = 0
         facing = -1
+    elif dir_y != 0:
+        if facing == 1:
+            action = 1
+        else:
+            action = 0
 
     frame = (frame + 1) % 8
     x += dir_x * 5
